@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<a href class="navbar-brand">NG-learn</a>
+			<ul class="nav navbar-nav">
+				<li><a href>Home</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container" ng-app="demoApp">
+
+		<div class="page-header"> NG - DataBinding ( two-way )</div>
+		
+		<div ng-controller="DemoController">
+			Name: <input id="nameField" ng-model="user">
+			<button id="resetBtn" ng-click="resetUser()">Reset</button>
+			<button id="resetBtn" ng-click="getFullName()">FullName</button>
+			<hr/>
+			Hello <span id="nameSpan">{{user}}</span>
+		</div>
+		
+	</div>
+
+	
+	<script src="angular-1.4.8/angular.js"></script>
+	<script type="text/javascript">
+	var appModule=angular.module('demoApp', []);
+	
+	/* var nameField=document.getElementById("nameField");
+	var nameSpan=document.getElementById("nameSpan");
+	var resetBtn=document.getElementById("resetBtn");
+	
+	nameField.addEventListener('keyup', function(e) {
+		var model=this.value;
+		nameSpan.innerHTML=model; // data-binding
+	})
+	resetBtn.addEventListener('click', function(e) {
+	nameField.value='';
+	nameSpan.innerHTML='';
+	}); */
+	
+	appModule.controller('DemoController', function($scope) {
+		$scope.user='';
+		$scope.resetUser=function(){
+			$scope.user='';
+		}
+		$scope.getFullName=function(){
+			$scope.user='Nagabhushanam N';
+		}
+		
+		// custom watch expression
+		$scope.$watch('user',function(newValue,oldValue){
+			console.log('digest loop running...');
+			console.log('new-value:-'+newValue);
+			console.log('old-value:-'+oldValue);
+		});
+	});
+	
+	
+	</script>
+	
+</body>
+</html>
+
+
+
+
+
+
+

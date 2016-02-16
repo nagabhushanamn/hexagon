@@ -1,0 +1,124 @@
+
+
+ JS
+ ----
+ 
+ --> scripting lang for web-pages in browser envi
+ +
+ --> server-side programming lang ( Node JS )
+ --> mobile applns
+ --> desktop appln
+ --> command-line tools
+ --> to write test-cases
+ etc....
+ 
+ ---------------------------------
+ 
+ Features
+ 
+ --> functional programming lan....
+ --> Object oriented lang.
+ 
+ --> it supports dynamic types
+ --> it supports closure
+ 
+ --> single-threaded , its supports concurrency.
+ 
+ --> intepreted lang..
+ 
+ --------------------------------------
+ 
+ where/when i shud use JS lang ?
+ 
+ --> event-driven, asynh func exceutions
+ 
+ ------------------------------------------
+ 
+ JS impln of 'ECMAScript spec '
+ 
+ latest release
+ --> ES-6
+ -----------------------------------------
+ 
+ how to execute JS programs ?
+ 
+  need 'JS engine'
+  
+  e,g
+  
+  chrome  --> v8 engine ( c++ project )
+  firefox --> rhino
+ 
+  JVM     -->    nashorn
+  
+  Apache CouchDB
+  
+  --------------------------------------------
+  
+  JS Learn
+  
+  
+  
+  a. data structure/types/variables
+  
+  
+     a. simple types
+     
+         string
+         number
+         boolean
+         null
+         undefined
+     
+     b. reference types. 
+  
+ 
+ 
+ -----------------------------------------------
+  JS  - Resources
+  
+  
+  1. MDN javascript
+  2. Principles of OO JS : book     
+  3. JS Good Parts   ( douglas crockford )
+  
+  4. jstherightway.org
+  5. javascriptsexy.com
+  
+  ----------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<a href class="navbar-brand">NG-learn</a>
+			<ul class="nav navbar-nav">
+				<li><a href>Home</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container" ng-app="demoApp">
+
+		<div class="page-header"> NG - DataBinding ( two-way ) _ Ex</div>
+		
+		<div ng-controller="DemoController">
+			<select ng-options="n for n in [5,10,15,20]" ng-model="userCount"></select>
+			<table class="table table-bordered table-striped table-condensed table-hover">
+				<tr ng-repeat="user in users">
+					<td>{{user.fname}}</td>
+					<td>{{user.lname}}</td>
+				</tr>
+			</table>
+		
+		</div>
+		
+	</div>
+
+	
+	<script src="angular-1.4.8/angular.js"></script>
+	<script type="text/javascript">
+	var appModule=angular.module('demoApp', []);
+
+	appModule.controller('DemoController', function($scope,$http) {
+	 
+		$scope.userCount=10;
+		 
+		function loadUsers(count){
+		 $http.jsonp("http://www.filltext.com/?callback=JSON_CALLBACK&rows="+count+"&fname={firstName}&lname={lastName}").
+		    success(function (data) {
+		        $scope.users = data
+		    });
+		}
+		
+		$scope.$watch('userCount',function(newCount,oldCount){
+			loadUsers(newCount);
+		});
+	 
+	});
+	
+	
+	</script>
+	
+</body>
+</html>
+
+
+
+
+
+
+

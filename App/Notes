@@ -1,0 +1,140 @@
+
+
+what js can do on HTML page ?
+
+using DOM API
+
+--> can create/retrieve/update/delete HTML elements
+--> can change HTML element's style
+--> can change element's attribute values
+--> can change element's text content
+
+using XHR API
+
+--> can communicate with server asych 
+
+using Timer API
+
+--> can execute time-actions ( setTimeout(), setInterval() )
+
+using HTML-5 APIs
+
+--> canvas --drawing effects
+--> Audio/Video
+--> local Storage
+--> Geo
+--> WS
+--> web-worker
+--> etc....
+
+
+
+--> can create RICH UI components... 
+
+
+
+---------------------------------------
+
+  JS using Web APIs( DOM , XHR , .. ) can bring any dynamic
+  functionality to web-page
+
+-----------------------------------------
+
+  JS <--> DOM <--> HTML
+
+
+
+---------------------------------------------------
+
+
+ How JS working in browser envi ?
+ 
+  JS
+  
+    --> single-threaded
+    --> concurrency
+    --> non-blocking
+    --> async 
+    
+   --------------------
+   
+   Browser
+   
+      -> JS engine
+      
+          call-stack
+          heap 
+
+      -> event-loop
+      -> callback-queue
+      -> WEB APIs
+
+  --------------------------
+  
+  single-threaded == one call-stack == one thing can happen at a time
+
+
+
+
+===========================================================
+
+
+  Limitation using plain-JS
+  
+  --> browser compatibility
+  --> performance issues
+  --> memory issues
+
+  --> code organization difficult
+  
+  etc....
+  
+  -----------------------
+
+   JS libraries or F.Ws
+   
+   JS-library
+   
+   --> jQuery 
+   
+   
+   limitation on jquery :-
+
+   --> code organization difficult.
+   --> too low level.
+   
+   
+   Frameworks ( MVC , MVVM )
+   
+   1. backbone 
+   2. Angular JS
+   3. Ember Js
+   4. KO
+   
+   // UI components..
+   
+   5. DOJO
+   6. EXT JS
+   
+   ..............
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+
+
+ How 2-way data-binding happening NG ?
+ 
+ 
+ NG - LifeCycle
+ ------------------
+ 
+  compilation-phase/parsing
+  
+  on every DOM element which are having 'directives'/'expressions'
+  will register 'watch' expressions ( listeners )
+ 
+ 
+  'watch' expression are executed by 'digest-loop'
+  
+  
+  -----------------------
+  
+  we can also register 'custom watch expressions'
+  
+  ---------------------------------------------
+  
+  
+  
+  
+  
+  
+  
+  

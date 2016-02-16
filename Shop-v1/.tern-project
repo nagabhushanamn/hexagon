@@ -1,0 +1,29 @@
+{
+  "plugins": {
+    "outline": {
+      
+    },
+    "node": {
+      
+    },
+    "jasmine": {
+      
+    },
+    "angular": {
+      
+    },
+    "protractor": {
+      
+    },
+    "bootstrap": {
+      
+    }
+  },
+  "libs": [
+    "ecma5",
+    "ecma6",
+    "browser",
+    "jquery"
+  ],
+  "ecmaVersion": 6
+}
