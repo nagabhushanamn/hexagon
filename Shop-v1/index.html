@@ -23,22 +23,62 @@
 		
 			<!-- View -->
 			<div ng-hide="product.notAvailable" 
-			     ng-repeat="product in products" class="list-group-item">
-				<h4>{{product.name}}</h4>
-				<h4>{{product.price}}</h4>
+			     ng-repeat="product in products|limitTo:10|orderBy:'-price'" class="list-group-item">
+				<h4>{{product.name|uppercase}} <small>{{product.make|date:'yyyy'}}</small> </h4>
+				<h4>{{product.price|priceDiscount:1000|currency:'&#8377;':1}}</h4>
 				<button ng-show="product.canBuy">Add to cart</button>
 				<hr/>
-				<section ng-init="tab=1">
+				<section ng-controller="TabsController">
 					<ul class="nav nav-tabs">
-						<li ng-class="{active:tab===1}"><a href ng-click="tab=1">Description</a></li>
-						<li ng-class="{active:tab===2}"><a href ng-click="tab=2">Specification</a></li>
-						<li ng-class="{active:tab===3}"><a href ng-click="tab=3">Reviews</a></li>
+						<li ng-class="{active:isTabSelected(1)}"><a href ng-click="changeTab(1)">Description</a></li>
+						<li ng-class="{active:isTabSelected(2)}"><a href ng-click="changeTab(2)">Specification</a></li>
+						<li ng-class="{active:isTabSelected(3)}"><a href ng-click="changeTab(3)">Reviews</a></li>
 					</ul>
-					<div class="panel" ng-show="tab===1">
+					<div class="panel" ng-show="isTabSelected(1)">
 						{{product.description}}
 					</div>
-					<div class="panel" ng-show="tab===2">Not Yet</div>
-					<div class="panel" ng-show="tab===3">None Yet</div>
+					<div class="panel" ng-show="isTabSelected(2)">Not Yet</div>
+					<div class="panel" ng-show="isTabSelected(3)">
+					
+						<blockquote ng-repeat="review in product.reviews">
+							<span>{{review.stars}} <small>{{review.author}}</small></span>
+							<p>{{review.body}}</p>
+						</blockquote>
+						<hr/>
+						
+						
+					
+						<div class="row">
+							<div class="col-md-6">
+							
+								 <form name="reviewForm" 
+											 ng-controller="ReviewFormController" 
+											 ng-submit="saveNewReview(product)">
+											 
+									<blockquote>
+										<span>{{review.stars}} <small>{{review.author}}</small></span>
+										<p>{{review.body}}</p>
+									</blockquote>
+								 
+									<div class="form-group">
+									 	<label>stars</label>
+									 	<select ng-options="n for n in [1,2,3,4,5]" ng-model="review.stars" class="form-control"></select>
+									 </div>
+									<div class="form-group">
+									 	<label>author</label>
+									 	<input type="email" ng-model="review.author" class="form-control">
+									 </div>
+									 <div class="form-group">
+									 	<label>body</label>
+									 	<textarea rows="5" cols="35" ng-model="review.body" class="form-control"></textarea>
+									 </div>
+								 	 <button type="submit" class="btn btn-primary">Submit</button>	
+								 </form>
+								
+							</div>
+						</div>
+					
+					</div>
 					tab : {{tab}}
 				</section>
 				
