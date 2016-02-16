@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="jquery-ui-1.11.4.custom/jquery-ui.css" rel="stylesheet">
+<style type="text/css">
+.ng-scope{
+border: 1px solid red;
+margin: 15px;
+padding: 10px;
+}
+</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<a href class="navbar-brand">NG-learn</a>
+			<ul class="nav navbar-nav">
+				<li><a href>Home</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container" ng-app="demoApp">
+	
+		<div class="page-header"> NG - directives(s) </div>
+		
+		<div ng-controller="ColorController">
+			
+			<input ng-model="color">
+			
+			<hello-world my-color="color"></hello-world>
+			<hello-world></hello-world>
+			
+		</div>
+		
+	</div>
+
+
+	
+	<script type="text/javascript" src="jquery-2.2.0.js"></script>
+	<script type="text/javascript" src="jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+		
+	<script src="angular-1.4.8/angular.js"></script>
+	<script type="text/javascript">
+	var appModule=angular.module('demoApp', []);
+	
+	appModule.controller('ColorController',function($scope){
+		$scope.color='yellow'
+	});
+	
+	appModule.directive('helloWorld', function(){
+		return{
+			restrict: "AECM",
+			replace: true,
+			scope:{
+				color:'=myColor'
+			},
+			templateUrl: "hello-world.html",
+			link:function(scope,jqEle,attr){
+				
+				//console.log('link func invoked....');
+				//console.log(scope.color);
+				//scope.color='red';
+				
+				//jqEle.addClass('ng-scope');
+
+				jqEle.on('mouseover',function(){
+					jqEle.css('cursor','pointer');
+				});
+				
+				jqEle.on('click',function(){
+					console.log('changing scope.color');
+					scope.color='#fff';
+					scope.$apply();  // trigger digest-loop
+				});
+				
+				/* if(attr.myColor){
+					scope.color=attr.myColor;
+				} */
+				
+			}
+		};
+	});
+	</script>
+	
+	
+	
+	
+	
+	<script type="text/javascript">
+	/* $(function(){
+		$('input').datepicker();
+	}); */
+	</script>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+

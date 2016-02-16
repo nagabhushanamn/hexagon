@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+input.ng-dirty.ng-invalid{
+border: 1px solid red;
+}
+</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<a href class="navbar-brand">NG-learn</a>
+			<ul class="nav navbar-nav">
+				<li><a href>Home</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container" ng-app="demoApp">
+	
+		<div class="page-header">NG - Form validation</div>
+		
+		<form name="loginForm" ng-submit="loginForm.$valid&&doLogin()">
+			<div class="form-group">
+				<label>UserName:</label>
+				<input name="email" type="email" class="form-control" ng-model="user.email" required>
+				<span ng-show="loginForm.email.$dirty&&loginForm.email.$error.required" class="text-danger">Required!!</span>
+				<span ng-show="loginForm.email.$dirty&&loginForm.email.$error.email" class="text-danger">Invalid Email!!</span>
+			</div>
+			<div class="form-group">
+				<label>Password:</label>
+				<input name="pword" 
+				       type="password" 
+				       class="form-control" 
+				       ng-model="user.password" 
+				       required
+				       ng-minlength="3"
+				       ng-maxlength="6">
+				<span ng-show="loginForm.pword.$dirty&&loginForm.pword.$error.required" class="text-danger">Required!!</span>
+				<span ng-show="loginForm.pword.$dirty&&loginForm.pword.$error.minlength" class="text-danger">Too short!!</span>
+				<span ng-show="loginForm.pword.$dirty&&loginForm.pword.$error.maxlength" class="text-danger">Too long!!</span>
+			</div>
+			<button class="btn btn-primary" type="submit" ng-disabled="loginForm.$invalid">Sign-In</button>
+		</form>
+		
+	</div>
+
+	
+	<script src="angular-1.4.8/angular.js"></script>
+	<script type="text/javascript">
+	var appModule=angular.module('demoApp', []);
+	
+	</script>
+	
+</body>
+</html>
+
+
+
+
+
+
+

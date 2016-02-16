@@ -22,6 +22,51 @@
   ---------------------------------------------
   
   
+  NG - vallidation
+  ----------------
+  
+  by default NG will validate form-fields based on
+  HTML-5 attributes / validation directives
+  
+  NG will keep form/form fields in following states
+  while validating
+  
+   --> pristine
+   --> dirty
+   --> invalid
+   --> valid
+   
+   --> untouched
+   --> touched
+   
+  -------------------------------------------------
+  
+  
+  Angular - Custom Directives
+  ----------------------------
+  
+  4 ways of directives
+  -----------------------
+  
+  Attribute style  ---> to apply for mixin-functionality for existing element.
+  Element style    ---> UI component.
+  Class style      ---> css based functionality
+  
+  ------------------------------------------------
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
