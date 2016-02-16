@@ -52,8 +52,9 @@
 							<div class="col-md-6">
 							
 								 <form name="reviewForm" 
-											 ng-controller="ReviewFormController" 
-											 ng-submit="saveNewReview(product)">
+								       novalidate="novalidate"      
+									   ng-controller="ReviewFormController" 
+									   ng-submit="reviewForm.$valid&&saveNewReview(product)">
 											 
 									<blockquote>
 										<span>{{review.stars}} <small>{{review.author}}</small></span>
@@ -62,17 +63,18 @@
 								 
 									<div class="form-group">
 									 	<label>stars</label>
-									 	<select ng-options="n for n in [1,2,3,4,5]" ng-model="review.stars" class="form-control"></select>
+									 	<select ng-options="n for n in [1,2,3,4,5]" ng-model="review.stars" class="form-control" required></select>
 									 </div>
 									<div class="form-group">
 									 	<label>author</label>
-									 	<input type="email" ng-model="review.author" class="form-control">
+									 	<input type="email" ng-model="review.author" class="form-control" required>
 									 </div>
 									 <div class="form-group">
 									 	<label>body</label>
-									 	<textarea rows="5" cols="35" ng-model="review.body" class="form-control"></textarea>
+									 	<textarea rows="5" cols="35" ng-model="review.body" class="form-control" required></textarea>
 									 </div>
-								 	 <button type="submit" class="btn btn-primary">Submit</button>	
+								 	 <button type="submit" class="btn btn-primary">Submit</button>
+								 	 is reviewForm valid : {{reviewForm.$valid}}	
 								 </form>
 								
 							</div>
