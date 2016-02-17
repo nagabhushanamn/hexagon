@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<a href class="navbar-brand">NG-learn</a>
+			<ul class="nav navbar-nav">
+				<li><a href>Home</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container" ng-app="demoApp">
+
+		<div class="page-header">NG - Promise</div>
+		<div ng-controller="TrainerController">
+		</div>
+
+	</div>
+
+
+	<script src="angular-1.4.8/angular.js"></script>
+	<script type="text/javascript">
+		var appModule = angular.module('demoApp', []);
+		
+		appModule.controller('TrainerController', function($scope,hotelService) {
+			
+			console.log('hungry...');
+			console.log('requesting food...');
+			var promise=hotelService.getFood();
+			console.log('got promise from hoterService..');
+			promise.then(function(food) {
+				console.log('yummmy...with '+food);
+			}, function(reason) {
+				console.log('ooops..'+reason);
+			}, function(progress) {
+				console.log('progress...'+progress);
+			});
+			console.log('continuing with other work...');
+			
+		});
+		
+		appModule.factory('hotelService', function($q) {
+			return{
+				getFood:function(){
+					var defer=$q.defer();
+			
+					setTimeout(function() {
+						defer.resolve('BIRYAAANNI');
+						//defer.reject('SORRRYYY>>>>>')
+					}, 5000);
+					
+					setTimeout(function() {
+						defer.notify('ON THE WAY>>>');
+					}, 2000);
+					
+					return defer.promise;
+				}
+			}
+		});
+		
+ 		
+ 	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

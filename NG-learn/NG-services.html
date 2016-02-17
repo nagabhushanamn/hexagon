@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index</title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<a href class="navbar-brand">NG-learn</a>
+			<ul class="nav navbar-nav">
+				<li><a href>Home</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container" ng-app="demoApp">
+
+		<div class="page-header">NG - Services</div>
+
+		<div ng-controller="HitController">
+			<button class="btn btn-primary" ng-click="doHit()">Hit</button>
+			<span class="badge">{{count}}</span>
+		</div>
+		<hr />
+		<div ng-controller="HitController">
+			<button class="btn btn-primary" ng-click="doHit()">Hit</button>
+			<span class="badge">{{count}}</span>
+		</div>
+		<hr />
+		<div ng-controller="KickController">
+			<button class="btn btn-primary" ng-click="doKick()">Kick</button>
+			<span class="badge">{{count}}</span>
+		</div>
+
+	</div>
+
+
+	<script src="angular-1.4.8/angular.js"></script>
+	<script type="text/javascript">
+		var appModule = angular.module('demoApp', []);
+		
+		/* appModule.config(function(countServiceProvider) {
+			countServiceProvider.setInitCount(200);
+		}); */
+		
+		appModule.controller('HitController', function($scope,countService) {
+			console.log('New HitController instance created....');
+			$scope.count = countService.getCount();
+			$scope.doHit = function() {
+				countService.doCount();
+				$scope.count = countService.getCount();
+			}
+		});
+		appModule.controller('KickController', function($scope,countService) {
+			console.log('New HitController instance created....');
+			$scope.count = countService.getCount();
+			$scope.doKick = function() {
+				countService.doCount();
+				$scope.count = countService.getCount();
+			}
+		});
+
+		//------------------------------------------------------------
+
+		/* appModule.provider('countService', function() {
+			var count = 0;
+			this.setInitCount=function(initialCount){
+				count=initialCount;
+			};
+			this.$get = function() {
+				console.log('creating/registering countService..');
+				return {
+					doCount : function() {
+						count += 1;
+					},
+					getCount : function() {
+						return count;
+					}
+				};
+			}
+
+		});
+ 		*/
+		//------------------------------------------------------------
+		
+		/* appModule.factory('countService',function(){
+			
+			var count = 0;
+			
+			return {
+				doCount : function() {
+					count += 1;
+				},
+				getCount : function() {
+					return count;
+				}
+			};
+
+		});
+ 		
+ 		*/
+ 		
+ 		//------------------------------------------------------------
+
+ 		/* function Counter{
+ 			this.count=0;
+ 			this.doCount=function(){
+ 				this.count+=1;
+ 			},
+ 			this.getCount=function(){
+ 				return count;
+ 			}
+ 		}
+ 		
+ 		appModule.service('countService',Counter); */
+ 		
+ 		//------------------------------------------------------------
+
+ 		var counter={
+ 				count:0,
+				doCount : function() {
+					this.count += 1;
+				},
+				getCount : function() {
+					return this.count;
+				}
+			};
+ 		
+ 		appModule.value('countService',counter);
+ 		
+ 		//------------------------------------------------------------
+ 		
+ 	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
