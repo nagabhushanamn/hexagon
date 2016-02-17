@@ -1,0 +1,41 @@
+{
+  "name": "Product",
+  "plural": "products",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+   "mongodb": {
+    "collection": "items"
+  }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "number",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "canBuy": {
+      "type": "boolean",
+      "required": true
+    },
+    "notAvailable": {
+      "type": "boolean",
+      "required": true
+    },
+    "make": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
