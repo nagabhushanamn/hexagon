@@ -1,0 +1,49 @@
+
+
+ NG - UnitTesting
+ ---------------
+ 
+ 
+ Testcases
+ TestRunner
+ 
+ Testing F.W
+ 
+   --> jasmine
+   --> mocha
+   --> qunit
+   --> nodeunit
+   
+   etc.....
+   
+   
+ ---------------------------
+ 
+ 
+ NG - E2E Testing
+ ------------------
+ 
+   test-cases  --> jasmine
+   
+   test-runner --> protractor
+ 
+ 
+ ---------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+   
+   
