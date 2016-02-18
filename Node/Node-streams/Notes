@@ -1,0 +1,28 @@
+
+
+ IO
+ -------
+ 
+ streams
+ 
+ 
+  source  -->   output
+  
+ ---------------------------
+ 
+ types
+ 
+  --> readable
+  --> writable
+  --> duplex
+  --> transform
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   

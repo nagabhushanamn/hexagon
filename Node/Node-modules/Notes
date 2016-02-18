@@ -1,0 +1,74 @@
+
+
+ Node - modules
+ ---------------
+ 
+ 
+ 
+  I.custom modules
+  ---------------
+  
+  xxx.js
+  
+  module.exports=..
+  
+  --------
+  
+  require('./package');
+  require('./package/module');
+  require('../parent')
+  
+  ============================================
+  
+  II. Third-Party modules
+  
+  
+     are hosted in 'NPM' repository
+    
+     www.npmjs.org'
+  
+  
+     to get node-packages from NPM repository , we need 'npm' tool
+     
+     --> command-line tool
+     
+     
+      local dependencies
+      --------------------
+      
+      "npm install XXXX --save"
+      
+      dev dependencies
+      --------------------
+      
+      e.g
+      
+      npm install karma --save-dev
+      
+      to exclude dev dependencies while installing
+      
+      npm install hexagonapp --production
+  
+  
+     global dependencies
+     ----------------------------
+     
+     e.g
+     
+        live-server
+        bower
+        grunt
+        gulp
+  
+  
+        npm install -g xxxxxx
+        
+        
+  
+  
+  
+  
+  
+  
+  
+  

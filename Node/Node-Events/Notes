@@ -1,0 +1,13 @@
+
+
+Node - Events
+------------------
+
+ require('events').EventEmitter
+ 
+ any object whic extends ' EventEmitter ' class ,
+ can emit 'event' and we can listern for that
+ 
+   "Listener '  pattern
+   
+ -------------------------------------------  
